@@ -1,13 +1,13 @@
 import re
 import string
 
-amount = input('Введите числа через запятую:')
-var = (amount == re.split('string', '[ , : / ]'), amount)
-amount = set(amount)
-amount.remove(',')
+amount = str(input('Введите числа через запятую:'))
+amount = re.split('[ ,:/]', amount)
 
-answer = input('Введите числа через запятую:')
-var = (answer == re.split('string', '[ , : / ]'), answer)
-answer = set(answer)
-answer.remove(',')
-print(amount-answer)
+
+answer = str(input('Введите числа через запятую:'))
+answer = re.split('[ ,:/]', answer)
+for key in answer:
+    if answer[+1] in amount:
+        amount.remove(key)
+print(amount)
