@@ -7,7 +7,7 @@ amount = re.split('[ ,:/]', amount)
 
 answer = str(input('Введите числа через запятую:'))
 answer = re.split('[ ,:/]', answer)
-for key in answer:
-    if answer[+1] in amount:
-        amount.remove(key)
+for element in amount[:]:
+    if element in answer:
+        amount.remove(element)
 print(amount)
